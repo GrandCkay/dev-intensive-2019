@@ -3,6 +3,8 @@ package ru.skillbranch.devintensive.models
 import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
 
+// Создаем data класс User и реализовать Factory для создания экземпляров класса
+
 data class User(
     val id: String,
     var firstName: String?,
@@ -10,7 +12,7 @@ data class User(
     var avatar: String?,
     var rating: Int = 0,
     var respect: Int = 0,
-    val lastVisit: Date? = null, // Date - получаем текущую дату и время
+    val lastVisit: Date? = Date(), // Date - получаем текущую дату и время
     val isOnline: Boolean = false
 
 ) {
@@ -28,6 +30,9 @@ data class User(
         println("It's a Live!!! \n" +
                 " ${if (lastName === "Doe")"His name id $firstName $lastName" else "Any his name is $firstName $lastName!!!" } \n")
     }
+
+
+    // Паттерн Factory с методом makeUser(fullName) принимающий в качесте аргумента полное имя пользователя и возвращающий экземпляр класса User
 
     companion object Factory{
         private var lastId : Int = -1

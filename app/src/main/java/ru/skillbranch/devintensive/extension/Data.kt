@@ -10,13 +10,13 @@ const val HOUR = 60 * MINUTE
 const val DAY = 24 * HOUR
 
 
-// Форматируем вывод даты
+// Форматируем вывода даты экземпляра класса Date по заданному паттерну
 fun Date.fotmat(pattern: String="HH:mm:ss dd.MM.yy"):String {
     val dataFormat = SimpleDateFormat(pattern, Locale("ru"))
     return dataFormat.format(this)
 }
 
-// Создаем функцию добавления к дата временного сдвига
+// Создаем функцию добавления к дата временного сдвига (extension для изменения значения экземпляра Data (добавление/вычитание) на указанную временную единицу)
 fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND) : Date {
     var time = this.time
 

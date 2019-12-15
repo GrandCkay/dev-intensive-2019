@@ -7,7 +7,7 @@ object Utils {
         // TODO FIX ME!!!
         val parts: List<String>? = fullName?.split(" ") // метод split разделяет fullName " " (пустым пробелом)  // ? безопасный метод так как fullName может быть пустым
 
-        var firstName = parts?.getOrNull(0) // getOrNull возвращается Null если в колекции нет обекта с индексом 0
+        var firstName = parts?.getOrNull(0) // getOrNull возвращается null если в колекции нет объекта с индексом 0
         var lastName = parts?.getOrNull(1)
 
         return firstName to lastName    // return Pair(firstName, lastName)

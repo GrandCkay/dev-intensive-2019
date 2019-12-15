@@ -79,7 +79,7 @@ class ExampleUnitTest {
 
     @Test
     fun text_data_maping(){
-        val user = User.makeUser("Вася Пупкин")
+        val user = User.makeUser("Вася ")
         val newUser = user.copy(lastVisit = Date().add(-7, TimeUnits.SECOND))
         println(newUser)
         val userView = newUser.toUserView()
